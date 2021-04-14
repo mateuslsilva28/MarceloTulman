@@ -3,7 +3,7 @@
 
 .container{
     max-width: 1500px;
-    @include mixin.Font(400, variables.$text-color, 0.7);
+    @include mixin.Font(400, variables.$black-color, 0.7);
 }
 
 p{margin: 0.1rem;}

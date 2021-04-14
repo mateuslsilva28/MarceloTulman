@@ -16,11 +16,21 @@ a {
 }
 
 header {
-  padding: 2rem 0;
-  background-color: #fff;
   display: flex;
-  justify-content: space-evenly;
-  width: 100%;
+  justify-content: space-between;
+  background-color: #fff;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  header {
+    padding: 2rem 2.5rem;
+    width: calc(100% - 5rem);
+  }
+}
+@media (min-width: 993px) {
+  header {
+    padding: 2rem 5rem;
+    width: calc(100% - 10rem);
+  }
 }
 header .contactTitle {
   font-family: "Poppins", sans-serif;
@@ -80,6 +90,47 @@ header .contact .socialMediaIcons a:nth-of-type(whatsapp) i {
   background-color: #4CCB5A;
 }
 
+.menu {
+  display: flex;
+  background-color: #008ebc;
+  color: #fff;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .menu {
+    padding: 2rem 2.5rem;
+    width: calc(100% - 5rem);
+  }
+}
+@media (min-width: 993px) {
+  .menu {
+    padding: 2rem 5rem;
+    width: calc(100% - 10rem);
+  }
+}
+.menu ul {
+  display: flex;
+  padding: 0;
+}
+.menu ul li {
+  cursor: pointer;
+  margin: 0 2rem 0 0;
+  font-size: 1.2rem;
+  list-style: none;
+}
+.menu ul li:hover {
+  color: #ffeb3b;
+}
+.menu ul .active {
+  color: #ffeb3b;
+}
+.menu ul .active:hover {
+  color: #fff;
+}
+
+.show-top {
+  top: 0px !important;
+}
+
 @media (max-width: 767px) {
   header {
     justify-content: space-between;
@@ -93,6 +144,20 @@ header .contact .socialMediaIcons a:nth-of-type(whatsapp) i {
 
   header .toggle {
     display: block;
+  }
+
+  .menu {
+    transition: all 0.5s linear;
+    position: relative;
+    top: -190px;
+    z-index: -1;
+  }
+  .menu ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .menu ul li {
+    margin: 0 0 0.5rem 0;
   }
 }
 @media (min-width: 768px) {
