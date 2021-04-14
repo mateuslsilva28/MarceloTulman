@@ -1,15 +1,16 @@
 window.addEventListener("load", ()=>{
     var toggle = document.getElementsByClassName("toggle")[0];
-    var menu = document.getElementsByClassName("menu")[0];
-    
-    
-    var verifica = false;
+    var menu = document.getElementsByClassName("menu")[0];   
+    var dropdown = document.getElementsByClassName("dropdown");
+    var menuDropdown = document.getElementsByClassName("menu-dropdown");
+    var isActive = false;
+    var isDropdownActive = [false, false, false]
     window.addEventListener("resize", ()=>resize());
     toggle.addEventListener("click", ()=>{
-        if(verifica == false){
+        if(isActive == false){
             toggle.setAttribute("class", "toggle fas fa-times fa-2x")
             menu.classList.add("show-top")
-            verifica = true;
+            isActive = true;
             window.addEventListener("resize", ()=>resize());            
         }
         else{
@@ -17,89 +18,45 @@ window.addEventListener("load", ()=>{
             window.addEventListener("resize", ()=>resize());
         }
     })
-
-    function mode_default (){
-        toggle.setAttribute("class", "toggle fas fa-bars fa-2x")
-        menu.classList.remove("show-top")
-        verifica = false;
-    }
-
-    function resize (){
-        width = window.innerWidth;
-        if(width >=1024){
-            mode_default();
-        }
-    }
-
-    /*var width = window.innerWidth;
-    var itens_menu = document.getElementsByClassName("item-header-menu");
-    var itens_sub_menu = document.getElementsByClassName("header-sub-menu");
-    var seta = document.getElementsByClassName("arrow");
-    var hero = document.getElementsByClassName("header-hero")[0];
-    var menu_mobile = document.getElementsByClassName("header-menu-mobile")[0];
-    var bool = [false, false, false, false, false, false]
-    var verifica = false;
-    window.addEventListener("resize", ()=>resize());
-    toggle.addEventListener("click", ()=>{
-        if(verifica == false){
-            toggle.setAttribute("class", "toggle fas fa-times")
-            hero.classList.add("hide")
-            menu_mobile.classList.add("show-top")
-            verifica = true;
-            window.addEventListener("resize", ()=>resize());            
-        }
-        else{
-            mode_default()
-            window.addEventListener("resize", ()=>resize());
-        }
-    })
-
-    for (const iterator of itens_menu) {
+    for (const iterator of dropdown) {
         iterator.addEventListener("click", ()=>{
+            console.log("mobile")
             switch (iterator) {
-                case itens_menu[0]:
+                case dropdown[0]:
                     verificar(0)
                     break;
-                case itens_menu[1]:
+                case dropdown[1]:
                     verificar(1)
                     break;
-                case itens_menu[2]:
+                case dropdown[2]:
                     verificar(2)
-                    break;
-                case itens_menu[3]:
-                    verificar(3)
-                    break;
-                case itens_menu[4]:
-                    verificar(4)
-                    break;
-                case itens_menu[5]:
-                    verificar(5)
                     break;
             }
         })
     }
-
-
+    function mode_default (){
+        toggle.setAttribute("class", "toggle fas fa-bars fa-2x")
+        menu.classList.remove("show-top")
+        for (let index = 0; index < dropdown.length; index++) {
+            menuDropdown[index].classList.add("hide")
+            isDropdownActive[index] = false
+        }
+        isActive = false;
+    }
+    function resize (){
+        width = window.innerWidth;
+        if(width <=767){
+            mode_default();
+        }
+    }
     function verificar (id){
-        var header = document.getElementsByTagName("header")[0]
-        
-        if (bool[id] == false){
-            itens_sub_menu[id].classList.add("active")
-            seta[id].classList.add("transform")
-            bool[id] = true
-            if(id >= 3){
-                header.style = "height: auto!important;"
-            }
+        if (isDropdownActive[id] == false){
+            menuDropdown[id].classList.remove("hide")
+            isDropdownActive[id] = true
         }
-
         else{
-            itens_sub_menu[id].classList.remove("active")
-            seta[id].classList.remove("transform")
-            bool[id] = false
-            if((id>=3)&&(bool[3]==false)&&(bool[4]==false)&&(bool[5] == false)){
-                header.style = "height: 600px!important;"
-            }
+            menuDropdown[id].classList.add("hide")
+            isDropdownActive[id] = false
         }
-
-    }*/
+    }
 })

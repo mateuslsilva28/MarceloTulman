@@ -1,10 +1,15 @@
 @use 'mixin';
     .show-top{
         top: 0px!important;
+        z-index: 0!important;
+        content-visibility: inherit!important;
+    }
+    .hide{
+        display: none!important;
     }
 @media (max-width:767px){
     header{
-        justify-content: space-between;
+        @include mixin.Flex(row, space, justify, between);
         padding: 2rem;
         width: calc(100% - 4rem);
     }
@@ -13,18 +18,21 @@
     }
     header .toggle{display: block;}
     .menu{
-        transition: all .5s linear;
+        transition: all  0.3s linear;
         position: relative;
-        top: -190px;
+        top: -6rem;
+        content-visibility: hidden;
         z-index: -1;
 
         ul{      
             @include mixin.Flex(column);
-
             li{
                 margin: 0 0 0.5rem 0;
             }
         }
+    }
+    .menu-dropdown{
+        position: relative!important;
     }
 }
 @media (min-width: 768px){
