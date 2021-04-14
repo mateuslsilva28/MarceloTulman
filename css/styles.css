@@ -1,0 +1,104 @@
+.container {
+  max-width: 1500px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.7);
+  word-break: break-all;
+}
+
+p {
+  margin: 0.1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  padding: 2rem 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+header .contactTitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: black;
+  word-break: break-all;
+  margin: 0 0 1rem 0;
+}
+header .email {
+  width: 30%;
+}
+header .logo {
+  max-width: 13rem;
+  width: auto;
+}
+header .logo img {
+  width: 100%;
+}
+header .email i {
+  color: #D44C3D;
+}
+header .phone i {
+  color: #4CCB5A;
+  transform: rotate(90deg);
+}
+header .contact {
+  display: flex;
+  flex-direction: column;
+}
+header .contact .text p i {
+  margin-right: 0.4rem;
+}
+header .contact .socialMediaIcons {
+  display: flex;
+  justify-content: center;
+}
+header .contact .socialMediaIcons i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100px;
+  color: #fff;
+  margin: 0 0.2rem;
+}
+header .contact .socialMediaIcons a:nth-of-type(1) i {
+  background-color: #5051B9;
+}
+header .contact .socialMediaIcons a:nth-of-type(2) i {
+  background-color: #f00;
+}
+header .contact .socialMediaIcons a:nth-of-type(gmail) i {
+  background-color: #D44C3D;
+}
+header .contact .socialMediaIcons a:nth-of-type(whatsapp) i {
+  background-color: #4CCB5A;
+}
+
+@media (max-width: 767px) {
+  header {
+    justify-content: space-between;
+    padding: 2rem;
+    width: calc(100% - 4rem);
+  }
+
+  header div:not(div:nth-of-type(1)), header .socialMedia {
+    display: none;
+  }
+
+  header .toggle {
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  header .toggle {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

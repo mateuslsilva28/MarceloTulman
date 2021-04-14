@@ -1,0 +1,30 @@
+@use "variables";
+
+@mixin center ($alignJustify){
+    @if $alignJustify == justify{justify-content: center;}
+    @else if $alignJustify == align {align-items: center;}
+    @else if $alignJustify == alignJustify {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@mixin space ($space){
+    @if $space == around{justify-content: space-around;}
+    @else if $space == between{justify-content: space-between;}
+    @else if $space == evenly{justify-content: space-evenly;}
+}
+
+@mixin Flex ($rowColumn:row, $justify:flex-start, $alignJustify:'', $space:''){
+    display: flex;
+    @if $rowColumn == column{flex-direction: column}
+    @if $justify == center {@include center($alignJustify);}
+    @else if $justify == space{@include space($space)}
+}
+
+@mixin Font($weight, $color, $opacity){
+    font-family: 'Poppins', sans-serif;
+    font-weight: $weight;
+    color: rgba($color, $opacity);
+    word-break: break-all;
+}

@@ -1,0 +1,16 @@
+@media (max-width:767px){
+    header{
+        justify-content: space-between;
+        padding: 2rem;
+        width: calc(100% - 4rem);
+    }
+    header div:not(div:nth-of-type(1)), header .socialMedia{
+        display: none;
+    }
+    header .toggle{display: block;}
+}
+@media (min-width: 768px){
+    header .toggle{
+        display: none;
+    }
+}
