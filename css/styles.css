@@ -3,6 +3,7 @@
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.7);
+  font-size: 1rem;
 }
 
 p {
@@ -21,24 +22,15 @@ a {
 header {
   display: flex;
   justify-content: space-between;
+  padding: 2rem 5rem;
+  width: calc(100% - 10rem) !important;
   background-color: #fff;
-}
-@media (min-width: 768px) and (max-width: 992px) {
-  header {
-    padding: 2rem 2rem;
-    width: calc(100% - 4rem);
-  }
-}
-@media (min-width: 993px) {
-  header {
-    padding: 2rem 5rem;
-    width: calc(100% - 10rem);
-  }
 }
 header .contactTitle {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   color: black;
+  font-size: 1rem;
   margin: 0 0 1rem 0;
 }
 header .email {
@@ -94,27 +86,21 @@ header .contact .socialMediaIcons a:nth-of-type(gmail) i {
 header .contact .socialMediaIcons a:nth-of-type(whatsapp) i {
   background-color: #4CCB5A;
 }
+header .toggle {
+  cursor: pointer;
+}
 
 .menu {
   display: flex;
   background-color: #008ebc;
   color: #fff;
-}
-@media (min-width: 768px) and (max-width: 992px) {
-  .menu {
-    padding: 2rem 2rem;
-    width: calc(100% - 4rem);
-  }
-}
-@media (min-width: 993px) {
-  .menu {
-    padding: 2rem 5rem;
-    width: calc(100% - 10rem);
-  }
+  padding: 0 0 0 5rem;
+  width: calc(100% - 5rem) !important;
 }
 .menu ul {
   display: flex;
   padding: 0;
+  text-transform: uppercase;
 }
 .menu ul .list-item {
   width: auto;
@@ -122,6 +108,13 @@ header .contact .socialMediaIcons a:nth-of-type(whatsapp) i {
   margin: 0 3.6rem 0 0;
   font-size: 1.1rem;
   position: relative;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: white;
+  font-size: 1.1rem;
+}
+.menu ul .list-item span {
+  display: none;
 }
 .menu ul .list-item:hover {
   color: #ffeb3b;
@@ -131,14 +124,20 @@ header .contact .socialMediaIcons a:nth-of-type(whatsapp) i {
   width: auto;
   display: flex;
   flex-direction: column;
+  padding: 0;
+  margin-top: 1rem;
 }
 .menu ul .list-item .menu-dropdown li {
-  padding: 0.2rem;
-  font-size: 1rem;
   width: calc(100% + 1rem);
   word-wrap: break-word;
   background-color: #fff;
-  color: #000;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: black;
+  font-size: 1rem;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  -webkit-box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0.16);
 }
 .menu ul .active {
   color: #ffeb3b;
@@ -157,18 +156,16 @@ header .contact .socialMediaIcons a:nth-of-type(whatsapp) i {
   display: none !important;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   header {
     display: flex;
     justify-content: space-between;
     padding: 2rem;
     width: calc(100% - 4rem);
   }
-
   header div:not(div:nth-of-type(1)), header .socialMedia {
     display: none;
   }
-
   header .toggle {
     display: block;
   }
@@ -179,20 +176,54 @@ header .contact .socialMediaIcons a:nth-of-type(whatsapp) i {
     top: -6rem;
     content-visibility: hidden;
     z-index: -1;
+    width: calc(100% - 2rem) !important;
   }
   .menu ul {
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
-  .menu ul li {
-    margin: 0 0 0.5rem 0;
+  .menu ul .list-item {
+    margin: 0.5rem 0 !important;
+    width: calc(100% - 2rem) !important;
+    font-size: 1.3rem;
   }
-
-  .menu-dropdown {
+  .menu ul .list-item .menu-dropdown {
+    background-color: #fff;
     position: relative !important;
+    margin-top: 1rem;
+    left: -2rem;
+    width: calc(100% + 4rem) !important;
+  }
+  .menu ul .list-item .menu-dropdown li {
+    width: calc(100% - 2rem) !important;
+    padding: 1rem 0 1rem 2rem;
+    -webkit-box-shadow: 0px 4px 8px 5px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 4px 8px 5px rgba(0, 0, 0, 0.16);
+  }
+  .menu ul .dropdown {
+    position: relative;
+  }
+  .menu ul .dropdown span {
+    display: block;
+    position: absolute;
+    left: 90%;
+    top: 0;
+    color: #ffeb3b;
   }
 }
-@media (min-width: 768px) {
+@media (max-width: 993px) {
+  header {
+    padding: 2rem;
+    width: calc(100% - 4rem) !important;
+  }
+
+  .menu {
+    padding: 0 0 0 2rem;
+    width: calc(100% - 2rem) !important;
+  }
+}
+@media (min-width: 769px) {
   header .toggle {
     display: none;
   }

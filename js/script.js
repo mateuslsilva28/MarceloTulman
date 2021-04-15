@@ -3,6 +3,7 @@ window.addEventListener("load", ()=>{
     var menu = document.getElementsByClassName("menu")[0];   
     var dropdown = document.getElementsByClassName("dropdown");
     var menuDropdown = document.getElementsByClassName("menu-dropdown");
+    var arrow = document.getElementsByClassName("arrow");
     var isActive = false;
     var isDropdownActive = [false, false, false]
     window.addEventListener("resize", ()=>resize());
@@ -40,6 +41,7 @@ window.addEventListener("load", ()=>{
         for (let index = 0; index < dropdown.length; index++) {
             menuDropdown[index].classList.add("hide")
             isDropdownActive[index] = false
+            arrow[index].setAttribute("class", "arrow fas fa-arrow-down")
         }
         isActive = false;
     }
@@ -52,10 +54,12 @@ window.addEventListener("load", ()=>{
     function verificar (id){
         if (isDropdownActive[id] == false){
             menuDropdown[id].classList.remove("hide")
+            arrow[id].setAttribute("class", "arrow fas fa-arrow-up");
             isDropdownActive[id] = true
         }
         else{
             menuDropdown[id].classList.add("hide")
+            arrow[id].setAttribute("class", "arrow fas fa-arrow-down");
             isDropdownActive[id] = false
         }
     }

@@ -1,41 +1,77 @@
+@use 'variables';
 @use 'mixin';
-    .show-top{
-        top: 0px!important;
-        z-index: 0!important;
-        content-visibility: inherit!important;
-    }
-    .hide{
-        display: none!important;
-    }
-@media (max-width:767px){
+.show-top{
+    top: 0px!important;
+    z-index: 0!important;
+    content-visibility: inherit!important;
+}
+.hide{
+    display: none!important;
+}
+@media (max-width:768px){
     header{
         @include mixin.Flex(row, space, justify, between);
         padding: 2rem;
         width: calc(100% - 4rem);
+
+        div:not(div:nth-of-type(1)), .socialMedia{
+            display: none;
+        }
+
+        .toggle{display: block;}
     }
-    header div:not(div:nth-of-type(1)), header .socialMedia{
-        display: none;
-    }
-    header .toggle{display: block;}
     .menu{
         transition: all  0.3s linear;
         position: relative;
         top: -6rem;
         content-visibility: hidden;
         z-index: -1;
-
+        width: calc(100% - 2rem)!important;
         ul{      
             @include mixin.Flex(column);
-            li{
-                margin: 0 0 0.5rem 0;
+            width: 100%;
+            .list-item{
+                margin: 0.5rem 0!important;
+                width: calc(100% - 2rem)!important;   
+                font-size: 1.3rem;
+                .menu-dropdown{
+                    background-color: variables.$white-color;
+                    position: relative!important;
+                    margin-top: 1rem;
+                    left: -2rem;
+                    width: calc(100% + 4rem)!important;
+                    li{
+                        width: calc(100% - 2rem)!important;
+                        @include mixin.boxShadow(1rem, 2rem,5px);
+                    }
+                }
+            }
+            .dropdown{
+                position: relative;
+                span{
+                    display: block;
+                    position: absolute;
+                    left: 90%;
+                    top: 0;
+                    color: variables.$secondary-color;
+                }
             }
         }
+    }    
+}
+
+@media (max-width: 993px){
+    header{
+        padding: 2rem;
+        width: calc(100% - 4rem)!important;
     }
-    .menu-dropdown{
-        position: relative!important;
+    .menu{
+        padding: 0 0 0 2rem;
+        width: calc(100% - 2rem)!important;
     }
 }
-@media (min-width: 768px){
+
+@media (min-width: 769px){
     header .toggle{
         display: none;
     }
