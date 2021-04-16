@@ -73,6 +73,7 @@ header{
                 @include mixin.Flex(column);
                 padding: 0;
                 margin-top: 1rem;
+                z-index: 1;
                 li{
                     width: calc(100% + 1rem);
                     word-wrap: break-word;

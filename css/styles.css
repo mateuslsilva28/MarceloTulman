@@ -126,6 +126,7 @@ header .toggle {
   flex-direction: column;
   padding: 0;
   margin-top: 1rem;
+  z-index: 1;
 }
 .menu ul .list-item .menu-dropdown li {
   width: calc(100% + 1rem);
@@ -146,6 +147,24 @@ header .toggle {
   color: #fff;
 }
 
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 2rem);
+  max-width: 1500px;
+  background-image: url("../img/slide-1.webp");
+  background-position: center;
+  background-size: 110%;
+  padding: 0 1rem;
+  position: relative;
+  transition: all 0.4s linear;
+}
+.banner i {
+  cursor: pointer;
+  color: #fff;
+}
+
 .show-top {
   top: 0px !important;
   z-index: 0 !important;
@@ -156,6 +175,21 @@ header .toggle {
   display: none !important;
 }
 
+@media (max-width: 319px) {
+  .banner {
+    display: none;
+  }
+}
+@media (min-width: 320px) {
+  .banner {
+    height: 300px;
+  }
+}
+@media (min-width: 576px) {
+  .banner {
+    height: 400px;
+  }
+}
 @media (max-width: 768px) {
   header {
     display: flex;
@@ -226,6 +260,10 @@ header .toggle {
 @media (min-width: 769px) {
   header .toggle {
     display: none;
+  }
+
+  .banner {
+    height: 550px;
   }
 }
 

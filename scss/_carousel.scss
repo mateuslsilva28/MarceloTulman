@@ -1,0 +1,21 @@
+@use 'variables';
+@use 'mixin';
+@use 'sass:map';
+
+.banner{
+    @include mixin.Flex(row, space, justify, between);
+    align-items: center;
+    width: calc(100% - 2rem);
+    max-width: 1500px;
+    background-image: url("../img/slide-1.webp");
+    background-position: center;
+    background-size: 110%;
+    padding: 0 1rem;
+    position: relative;
+    transition: all 0.4s linear;
+    
+    i{
+        cursor: pointer;
+        color: variables.$white-color;
+    }
+}

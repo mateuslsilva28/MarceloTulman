@@ -8,6 +8,21 @@
 .hide{
     display: none!important;
 }
+
+@media (max-width:319px){
+    .banner{
+        display: none;
+    }
+}
+
+@media (min-width:320px){
+    .banner{height: 300px;}
+}
+
+@media (min-width:576px){
+    .banner{height: 400px;}
+}
+
 @media (max-width:768px){
     header{
         @include mixin.Flex(row, space, justify, between);
@@ -75,4 +90,6 @@
     header .toggle{
         display: none;
     }
+    
+    .banner{height: 550px;}
 }
