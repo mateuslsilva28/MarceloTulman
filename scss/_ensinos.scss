@@ -17,7 +17,6 @@
             height: 30rem;    
             @include mixin.Font(700, variables.$white-color, 1.0);
             img{
-<<<<<<< HEAD
                 width: 9rem!important;
                 height: 7rem!important;
             }
@@ -29,23 +28,6 @@
                     padding: 0.7rem 2.5rem;
                     &:hover{background-color: #51d351;}
                 }
-=======
-                width: 8rem!important;
-                height: 6rem!important;
-            }
-            p{@include mixin.Font(400, variables.$white-color, 1.0, 1.2rem)}
-            button{
-                cursor: pointer;
-                padding: 0.7rem 2.5rem;
-                border-radius: 1.4rem;
-                text-transform: uppercase;
-                border: none;
-                outline: none;
-                background-color: #34d134;
-                transition: all 0.2s linear;      
-                @include mixin.Font(600, variables.$white-color, 1.0, 1.2rem);
-                &:hover{background-color: #51d351;}
->>>>>>> cfeec0bce09bad6bb4144085092f145f7341898e
             }
         }
         .card:nth-of-type(1){background-color: mixin.color("blue", "light")}

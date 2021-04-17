@@ -24,7 +24,6 @@
         flex-wrap: wrap;   
         .card{width: 50%!important;}
     }
-<<<<<<< HEAD
     .card-projects{
         .card{
             width: calc(50% - 1rem - 2px)!important;
@@ -38,8 +37,6 @@
             }
         }
     }
-=======
->>>>>>> cfeec0bce09bad6bb4144085092f145f7341898e
 }
 
 @media (max-width:768px){
@@ -96,7 +93,6 @@
     .cards{
         width: 100%!important;
     }
-<<<<<<< HEAD
     .project-content{
         width: 100%!important;
         .card-projects{
@@ -110,8 +106,6 @@
             }
         }
     }
-=======
->>>>>>> cfeec0bce09bad6bb4144085092f145f7341898e
 }
 
 @media (max-width: 577px){  
@@ -121,7 +115,6 @@
         @include mixin.Flex(column);
         .card{width: 100%!important;}
     }
-<<<<<<< HEAD
     .project-content{
         width: 100%!important;
         .card-projects{
@@ -135,8 +128,6 @@
             }
         }
     }
-=======
->>>>>>> cfeec0bce09bad6bb4144085092f145f7341898e
 }
 
 @media (max-width:319px){

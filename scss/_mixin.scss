@@ -29,11 +29,7 @@
     font-size: $size;
 }
 
-<<<<<<< HEAD
 @mixin boxShadow ($topBottom:0, $left:0, $spread){
-=======
-@mixin boxShadow ($topBottom, $left, $spread){
->>>>>>> cfeec0bce09bad6bb4144085092f145f7341898e
     padding: $topBottom 0 $topBottom $left;
     -webkit-box-shadow: 0px 4px 8px $spread rgba(0,0,0,0.16); 
     box-shadow: 0px 4px 8px $spread rgba(0,0,0,0.16);
