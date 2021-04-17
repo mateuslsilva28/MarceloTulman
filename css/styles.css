@@ -88,6 +88,7 @@ header .contact .socialMediaIcons a:nth-of-type(whatsapp) i {
 }
 header .toggle {
   cursor: pointer;
+  display: none;
 }
 
 .menu {
@@ -153,6 +154,7 @@ header .toggle {
   align-items: center;
   width: calc(100% - 2rem);
   max-width: 1500px;
+  height: 550px;
   background-image: url("../img/slide-1.webp");
   background-position: center;
   background-size: 110%;
@@ -165,6 +167,68 @@ header .toggle {
   color: #fff;
 }
 
+.ensinos {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.ensinos .cards {
+  display: flex;
+  width: 90%;
+}
+.ensinos .cards .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  padding: 1.5rem 0 2.5rem 0;
+  width: 40%;
+  height: 30rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: white;
+  font-size: 1rem;
+}
+.ensinos .cards .card img {
+  width: 8rem !important;
+  height: 6rem !important;
+}
+.ensinos .cards .card p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: white;
+  font-size: 1.2rem;
+}
+.ensinos .cards .card button {
+  cursor: pointer;
+  padding: 0.7rem 2.5rem;
+  border-radius: 1.4rem;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  background-color: #34d134;
+  transition: all 0.2s linear;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: white;
+  font-size: 1.2rem;
+}
+.ensinos .cards .card button:hover {
+  background-color: #51d351;
+}
+.ensinos .cards .card:nth-of-type(1) {
+  background-color: #5caac4;
+}
+.ensinos .cards .card:nth-of-type(2) {
+  background-color: #e4d552;
+}
+.ensinos .cards .card:nth-of-type(3) {
+  background-color: #dd5c5c;
+}
+
+/*Class Menu Responsive*/
 .show-top {
   top: 0px !important;
   z-index: 0 !important;
@@ -175,19 +239,24 @@ header .toggle {
   display: none !important;
 }
 
-@media (max-width: 319px) {
-  .banner {
-    display: none;
+@media (max-width: 992px) {
+  header {
+    padding: 2rem;
+    width: calc(100% - 4rem) !important;
   }
-}
-@media (min-width: 320px) {
-  .banner {
-    height: 300px;
+
+  .menu {
+    padding: 0 0 0 2rem;
+    width: calc(100% - 2rem) !important;
   }
-}
-@media (min-width: 576px) {
-  .banner {
-    height: 400px;
+
+  .cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .cards .card {
+    width: 50% !important;
   }
 }
 @media (max-width: 768px) {
@@ -245,25 +314,32 @@ header .toggle {
     top: 0;
     color: #ffeb3b;
   }
-}
-@media (max-width: 993px) {
-  header {
-    padding: 2rem;
-    width: calc(100% - 4rem) !important;
-  }
-
-  .menu {
-    padding: 0 0 0 2rem;
-    width: calc(100% - 2rem) !important;
-  }
-}
-@media (min-width: 769px) {
-  header .toggle {
-    display: none;
-  }
 
   .banner {
-    height: 550px;
+    height: 400px;
+  }
+
+  .cards {
+    width: 100% !important;
+  }
+}
+@media (max-width: 577px) {
+  .banner {
+    height: 300px;
+  }
+
+  .cards {
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+  }
+  .cards .card {
+    width: 100% !important;
+  }
+}
+@media (max-width: 319px) {
+  .banner {
+    display: none;
   }
 }
 

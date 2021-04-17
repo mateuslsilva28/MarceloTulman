@@ -1,5 +1,6 @@
 @use 'variables';
 @use 'mixin';
+/*Class Menu Responsive*/
 .show-top{
     top: 0px!important;
     z-index: 0!important;
@@ -9,18 +10,20 @@
     display: none!important;
 }
 
-@media (max-width:319px){
-    .banner{
-        display: none;
+@media (max-width: 992px){
+    header{
+        padding: 2rem;
+        width: calc(100% - 4rem)!important;
     }
-}
-
-@media (min-width:320px){
-    .banner{height: 300px;}
-}
-
-@media (min-width:576px){
-    .banner{height: 400px;}
+    .menu{
+        padding: 0 0 0 2rem;
+        width: calc(100% - 2rem)!important;
+    }
+    .cards{
+        @include mixin.Flex(row, center, justify);
+        flex-wrap: wrap;   
+        .card{width: 50%!important;}
+    }
 }
 
 @media (max-width:768px){
@@ -68,28 +71,26 @@
                     position: absolute;
                     left: 90%;
                     top: 0;
-                    color: variables.$secondary-color;
+                    color: mixin.color("yellow", "base");
                 }
             }
         }
-    }    
-}
-
-@media (max-width: 993px){
-    header{
-        padding: 2rem;
-        width: calc(100% - 4rem)!important;
     }
-    .menu{
-        padding: 0 0 0 2rem;
-        width: calc(100% - 2rem)!important;
+    .banner{height: 400px;}
+    .cards{
+        width: 100%!important;
     }
 }
 
-@media (min-width: 769px){
-    header .toggle{
-        display: none;
+@media (max-width: 577px){  
+    .banner{height: 300px;}    
+    .cards{
+        width: 100%!important;
+        @include mixin.Flex(column);
+        .card{width: 100%!important;}
     }
-    
-    .banner{height: 550px;}
+}
+
+@media (max-width:319px){
+    .banner{display: none;}
 }

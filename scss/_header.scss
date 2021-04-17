@@ -46,11 +46,12 @@ header{
     }
     .toggle{
         cursor: pointer;
+        display: none;
     }
 }
 .menu{
     @include mixin.Flex(row);
-    background-color: variables.$primary-color;
+    background-color: mixin.color("blue", "base");
     color: variables.$white-color;
     padding: 0 0 0 5rem;
     width: calc(100% - 5rem)!important;
@@ -66,7 +67,7 @@ header{
             position: relative;
             @include mixin.Font(600, variables.$white-color, 1.0, 1.1rem);
             span{display: none;}
-            &:hover{color: variables.$secondary-color;}
+            &:hover{color: mixin.color("yellow", "base")}
             .menu-dropdown{
                 position: absolute;
                 width: auto;
@@ -84,7 +85,7 @@ header{
             }
         }
         .active{
-            color: variables.$secondary-color;
+            color: mixin.color("yellow", "base");
             &:hover{color: variables.$white-color;}
         }       
     }

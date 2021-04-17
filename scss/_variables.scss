@@ -1,5 +1,8 @@
 $white-color: #fff;
 $black-color: #000;
-$primary-color: #008ebc;
-$secondary-color: #ffeb3b;
+$primary-color : ("base" : #008ebc,"light" : #5caac4,);
+$secondary-color : ("base" : #ffeb3b,"light" : #e4d552,);
+$three-color : ("base" : #f00,"light" : #dd5c5c,);
+$principalColors : ("blue" : $primary-color, "yellow" : $secondary-color,"red" : $three-color);
+
 $socialMediaColors: (1 : #5051B9, 2 : #f00, "gmail" : #D44C3D, "whatsapp" : #4CCB5A);
