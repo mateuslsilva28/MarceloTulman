@@ -11,4 +11,18 @@ li{list-style: none;}
 a{
     color: inherit;
     text-decoration: none;
+<<<<<<< HEAD
+}
+
+.btn{
+    width: 70%;
+    cursor: pointer;
+    border-radius: 1.4rem;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    transition: all 0.2s linear;      
+    @include mixin.Font(600, variables.$white-color, 1.0, 1.2rem);
+=======
+>>>>>>> cfeec0bce09bad6bb4144085092f145f7341898e
 }

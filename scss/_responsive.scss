@@ -24,6 +24,22 @@
         flex-wrap: wrap;   
         .card{width: 50%!important;}
     }
+<<<<<<< HEAD
+    .card-projects{
+        .card{
+            width: calc(50% - 1rem - 2px)!important;
+            height: 26rem!important;
+            .card-img{
+                height: 12.5rem!important;
+                img{height: 12.5rem!important;}
+            }
+            .content-card{
+                height: 13.5rem!important;
+            }
+        }
+    }
+=======
+>>>>>>> cfeec0bce09bad6bb4144085092f145f7341898e
 }
 
 @media (max-width:768px){
@@ -80,6 +96,22 @@
     .cards{
         width: 100%!important;
     }
+<<<<<<< HEAD
+    .project-content{
+        width: 100%!important;
+        .card-projects{
+            .card{
+                margin: 0.5rem 0.25rem!important;
+                width: calc(50% - 0.5rem - 2px)!important;
+                height: 27rem!important;
+                .content-card{
+                    height: 14.5rem!important;
+                }
+            }
+        }
+    }
+=======
+>>>>>>> cfeec0bce09bad6bb4144085092f145f7341898e
 }
 
 @media (max-width: 577px){  
@@ -89,6 +121,22 @@
         @include mixin.Flex(column);
         .card{width: 100%!important;}
     }
+<<<<<<< HEAD
+    .project-content{
+        width: 100%!important;
+        .card-projects{
+            .card{
+                height: 30rem!important;
+                width: calc(100% - 1rem - 2px)!important;
+                .card-img{
+                    height: 15rem!important;
+                    img{height: 15rem!important;}
+                }
+            }
+        }
+    }
+=======
+>>>>>>> cfeec0bce09bad6bb4144085092f145f7341898e
 }
 
 @media (max-width:319px){
