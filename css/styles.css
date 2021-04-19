@@ -181,6 +181,71 @@ header .toggle {
   color: #fff;
 }
 
+.about {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+.about .about-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 90%;
+}
+.about .about-content h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: #008ebc;
+  font-size: 2rem;
+}
+.about .about-content .container {
+  display: flex;
+  padding: 2rem 0;
+  background-color: #008ebc;
+}
+.about .about-content .container .card {
+  padding: 0 0 0 0;
+  -webkit-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.16);
+  padding: 0 0 2.5rem 0;
+  margin: 0 1rem;
+  width: calc(25% - 2rem);
+  background-color: #fff;
+  transition: all 0.2s linear;
+}
+.about .about-content .container .card:hover {
+  padding: 0 0 0 0;
+  -webkit-box-shadow: 0px 4px 8px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 4px 8px 6px rgba(0, 0, 0, 0.16);
+}
+.about .about-content .container .card h2 {
+  overflow: hidden;
+  cursor: pointer;
+  color: #008ebc;
+}
+.about .about-content .container .card h2 i {
+  position: relative;
+  transition: all 0.4s linear;
+  margin-right: 0.5rem;
+}
+.about .about-content .container .card h2:hover i {
+  animation: leftToRight 0.4s;
+  color: #dd5c5c;
+}
+@keyframes leftToRight {
+  from {
+    left: -30%;
+  }
+  to {
+    left: 0;
+  }
+}
+.about .about-content .container .card p {
+  padding: 0 0.5rem;
+  text-align: left;
+}
+
 .ensinos {
   width: 100%;
   display: flex;
