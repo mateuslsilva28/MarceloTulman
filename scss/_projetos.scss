@@ -1,4 +1,5 @@
 @use 'variables';
+@use 'extend';
 @use 'mixin';
 @use 'sass:map';
 
@@ -10,53 +11,31 @@
         @include mixin.Flex(column);
         text-align: center;
         width: 90%;
-
         h1{
             @include mixin.Font(700, mixin.color("blue", "base"), 1.0, 2rem);
         }
-        .card-projects{
-            @include mixin.Flex(row, space, justify, between);
-            margin: 2rem 0 0 0;
-            flex-wrap: wrap;
+        .container{
+            @extend .containerCards;
             .card{
-                border-radius: 0.8rem;
-                @include mixin.boxShadow(0, 0, 2px);
-                @include mixin.Flex(column);
-                background-color: variables.$white-color;
-                width: calc(25% - 1rem - 2px);
-                margin: 0.5rem;
-                height: 28rem;
-                transition: all 0.4s linear;
-                &:hover{@include mixin.boxShadow(0,0,8px)}
+                @extend .cardStructure;
                 &-img{
                     overflow: hidden;
                     width: 100%;
                     height: 10rem;
-
                     img{
                         transform: scale(1.2);
                         width:100%;
                         height:10rem;
                         transition: all 0.4s linear;
                         &:hover{transform: scale(1.5);}
-                    }
-                    
+                    }   
                 }
                 .content-card{
+                    margin: 0 0 3rem 0;                    
                     padding: 0 0.2rem 0.6rem 0.2rem;
-                    height: 18rem;
                     @include mixin.Flex(column, space, justify, between);
-                    align-items: center;
-                    h2{@include mixin.Font(600, mixin.color("blue", "base"), 1.0, 1.3rem);}
-                    button{    
-                        max-width: 15rem;
-                        padding: 0.7rem 0.2rem;
-                        background-color: mixin.color("blue", "base");                        
-                    }
-                    button:hover{
-                        background-color: mixin.color("blue", "light");
-                    }
                 }
+                button{@extend .btn;}
             }
         }
     }

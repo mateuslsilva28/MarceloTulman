@@ -1,4 +1,5 @@
 @use 'variables';
+@use 'extend';
 @use 'mixin';
 
 .about{
@@ -16,40 +17,37 @@
         }
 
         .container{
-            @include mixin.Flex(row);
-            padding: 2rem 0;
+            @extend .containerCards;
+            width: calc(100% - 1rem);
+            padding: 2rem 0.5rem;
             background-color: mixin.color("blue", "base");
 
             .card{
-                @include mixin.boxShadow(0, 0, 2px);
-                padding: 0 0 2.5rem 0;
-                margin: 0 1rem;
-                width: calc(25% - 2rem);
-                background-color: variables.$white-color;
-                transition: all 0.2s linear;
-                &:hover{@include mixin.boxShadow(0,0,6px)}
-                h2{
-                    overflow: hidden;
-                    cursor:pointer;
-                    color: mixin.color("blue", "base");
-                    i{
-                        position: relative;
-                        transition: all 0.4s linear;
-                        margin-right: 0.5rem;
+                @extend .cardStructure;
+                .text-card{
+                    margin: 0 0 3rem 0;
+                    h2{
+                        overflow: hidden;
+                        cursor:pointer;
+                        i{
+                            position: relative;
+                            margin-right: 0.5rem;
+                        }
+                        &:hover i{
+                            animation: leftToRight 0.4s;
+                            color: mixin.color("red", "light");
+                        }
+                        @keyframes leftToRight {
+                            from{left: -30%;}
+                            to{left: 0;}
+                        }
                     }
-                    &:hover i{
-                        animation: leftToRight 0.4s;
-                        color: mixin.color("red", "light");
-                    }
-                    @keyframes leftToRight {
-                        from{left: -30%;}
-                        to{left: 0;}
+                    p{
+                        padding: 0 0.5rem;
+                        text-align: left;
                     }
                 }
-                p{
-                    padding: 0 0.5rem;
-                    text-align: left;
-                }
+                button{@extend .btn;}   
             }
         }
     }

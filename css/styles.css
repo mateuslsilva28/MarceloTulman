@@ -19,7 +19,7 @@ a {
   text-decoration: none;
 }
 
-.btn {
+button {
   width: 70%;
   cursor: pointer;
   border-radius: 1.4rem;
@@ -181,6 +181,50 @@ header .toggle {
   color: #fff;
 }
 
+.btn, .projects .project-content .container .card button, .about .about-content .container .card button {
+  max-width: 15rem;
+  padding: 0.7rem 0.2rem;
+  background-color: #008ebc;
+}
+.btn:hover, .projects .project-content .container .card button:hover, .about .about-content .container .card button:hover {
+  background-color: #5caac4;
+}
+
+.containerCards, .projects .project-content .container, .about .about-content .container {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0 0 0;
+  flex-wrap: wrap;
+}
+
+.cardStructure, .projects .project-content .container .card, .about .about-content .container .card {
+  padding: 0 0 0 0;
+  -webkit-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.16);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(25% - 1rem);
+  height: auto;
+  align-items: center;
+  padding: 0 0 2rem 0 !important;
+  margin: 0.5rem;
+  border-radius: 0.8rem;
+  background-color: #fff;
+  transition: all 0.4s linear;
+}
+.cardStructure:hover, .projects .project-content .container .card:hover, .about .about-content .container .card:hover {
+  padding: 0 0 0 0;
+  -webkit-box-shadow: 0px 4px 8px 8px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 4px 8px 8px rgba(0, 0, 0, 0.16);
+}
+.cardStructure h2, .projects .project-content .container .card h2, .about .about-content .container .card h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #008ebc;
+  font-size: 1.3rem;
+}
+
 .about {
   display: flex;
   justify-content: center;
@@ -200,36 +244,22 @@ header .toggle {
   font-size: 2rem;
 }
 .about .about-content .container {
-  display: flex;
-  padding: 2rem 0;
+  width: calc(100% - 1rem);
+  padding: 2rem 0.5rem;
   background-color: #008ebc;
 }
-.about .about-content .container .card {
-  padding: 0 0 0 0;
-  -webkit-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.16);
-  box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.16);
-  padding: 0 0 2.5rem 0;
-  margin: 0 1rem;
-  width: calc(25% - 2rem);
-  background-color: #fff;
-  transition: all 0.2s linear;
+.about .about-content .container .card .text-card {
+  margin: 0 0 3rem 0;
 }
-.about .about-content .container .card:hover {
-  padding: 0 0 0 0;
-  -webkit-box-shadow: 0px 4px 8px 6px rgba(0, 0, 0, 0.16);
-  box-shadow: 0px 4px 8px 6px rgba(0, 0, 0, 0.16);
-}
-.about .about-content .container .card h2 {
+.about .about-content .container .card .text-card h2 {
   overflow: hidden;
   cursor: pointer;
-  color: #008ebc;
 }
-.about .about-content .container .card h2 i {
+.about .about-content .container .card .text-card h2 i {
   position: relative;
-  transition: all 0.4s linear;
   margin-right: 0.5rem;
 }
-.about .about-content .container .card h2:hover i {
+.about .about-content .container .card .text-card h2:hover i {
   animation: leftToRight 0.4s;
   color: #dd5c5c;
 }
@@ -241,11 +271,18 @@ header .toggle {
     left: 0;
   }
 }
-.about .about-content .container .card p {
+.about .about-content .container .card .text-card p {
   padding: 0 0.5rem;
   text-align: left;
 }
-
+@keyframes topToBottom {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0%;
+  }
+}
 .ensinos {
   width: 100%;
   display: flex;
@@ -265,12 +302,17 @@ header .toggle {
   padding: 1.5rem 0 2.5rem 0;
   width: 40%;
   height: 30rem;
+  overflow: hidden;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   color: white;
   font-size: 1rem;
 }
+.ensinos .cards .card:hover img {
+  animation: topToBottom 0.5s;
+}
 .ensinos .cards .card img {
+  position: relative;
   width: 9rem !important;
   height: 7rem !important;
 }
@@ -292,12 +334,14 @@ header .toggle {
 }
 .ensinos .cards .card:nth-of-type(1) {
   background-color: #5caac4;
+  border-radius: 0.8rem 0 0 0.8rem;
 }
 .ensinos .cards .card:nth-of-type(2) {
   background-color: #e4d552;
 }
 .ensinos .cards .card:nth-of-type(3) {
   background-color: #dd5c5c;
+  border-radius: 0 0.8rem 0.8rem 0;
 }
 
 .projects {
@@ -317,67 +361,27 @@ header .toggle {
   color: #008ebc;
   font-size: 2rem;
 }
-.projects .project-content .card-projects {
-  display: flex;
-  justify-content: space-between;
-  margin: 2rem 0 0 0;
-  flex-wrap: wrap;
-}
-.projects .project-content .card-projects .card {
-  border-radius: 0.8rem;
-  padding: 0 0 0 0;
-  -webkit-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.16);
-  box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.16);
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  width: calc(25% - 1rem - 2px);
-  margin: 0.5rem;
-  height: 28rem;
-  transition: all 0.4s linear;
-}
-.projects .project-content .card-projects .card:hover {
-  padding: 0 0 0 0;
-  -webkit-box-shadow: 0px 4px 8px 8px rgba(0, 0, 0, 0.16);
-  box-shadow: 0px 4px 8px 8px rgba(0, 0, 0, 0.16);
-}
-.projects .project-content .card-projects .card-img {
+.projects .project-content .container .card-img {
   overflow: hidden;
   width: 100%;
   height: 10rem;
 }
-.projects .project-content .card-projects .card-img img {
+.projects .project-content .container .card-img img {
   transform: scale(1.2);
   width: 100%;
   height: 10rem;
   transition: all 0.4s linear;
 }
-.projects .project-content .card-projects .card-img img:hover {
+.projects .project-content .container .card-img img:hover {
   transform: scale(1.5);
 }
-.projects .project-content .card-projects .card .content-card {
+.projects .project-content .container .card .content-card {
+  margin: 0 0 3rem 0;
   padding: 0 0.2rem 0.6rem 0.2rem;
-  height: 18rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
 }
-.projects .project-content .card-projects .card .content-card h2 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  color: #008ebc;
-  font-size: 1.3rem;
-}
-.projects .project-content .card-projects .card .content-card button {
-  max-width: 15rem;
-  padding: 0.7rem 0.2rem;
-  background-color: #008ebc;
-}
-.projects .project-content .card-projects .card .content-card button:hover {
-  background-color: #5caac4;
-}
-
 /*Class Menu Responsive*/
 .show-top {
   top: 0px !important;
@@ -408,19 +412,26 @@ header .toggle {
   .cards .card {
     width: 50% !important;
   }
+  .cards .card:nth-of-type(2) {
+    border-radius: 0 0.8rem 0.8rem 0;
+  }
+  .cards .card:nth-of-type(3) {
+    border-radius: 0 0 0.8rem 0.8rem !important;
+  }
 
-  .card-projects .card {
+  .container .card {
     width: calc(50% - 1rem - 2px) !important;
-    height: 26rem !important;
   }
-  .card-projects .card .card-img {
+  .container .card .card-img {
     height: 12.5rem !important;
   }
-  .card-projects .card .card-img img {
+  .container .card .card-img img {
     height: 12.5rem !important;
   }
-  .card-projects .card .content-card {
-    height: 13.5rem !important;
+
+  .about-content .container .card {
+    margin: 0.5rem !important;
+    width: calc(50% - 1rem) !important;
   }
 }
 @media (max-width: 768px) {
@@ -486,17 +497,23 @@ header .toggle {
   .cards {
     width: 100% !important;
   }
+  .cards .card:nth-of-type(1) {
+    border-radius: 0 !important;
+  }
+  .cards .card:nth-of-type(2) {
+    border-radius: 0 !important;
+  }
 
   .project-content {
     width: 100% !important;
   }
-  .project-content .card-projects .card {
+  .project-content .container .card {
     margin: 0.5rem 0.25rem !important;
     width: calc(50% - 0.5rem - 2px) !important;
-    height: 27rem !important;
   }
-  .project-content .card-projects .card .content-card {
-    height: 14.5rem !important;
+
+  .about-content {
+    width: 100% !important;
   }
 }
 @media (max-width: 577px) {
@@ -512,24 +529,41 @@ header .toggle {
   .cards .card {
     width: 100% !important;
   }
+  .cards .card:nth-of-type(3) {
+    border-radius: 0 !important;
+  }
 
   .project-content {
     width: 100% !important;
   }
-  .project-content .card-projects .card {
+  .project-content .container .card {
     height: 30rem !important;
     width: calc(100% - 1rem - 2px) !important;
   }
-  .project-content .card-projects .card .card-img {
+  .project-content .container .card .card-img {
     height: 15rem !important;
   }
-  .project-content .card-projects .card .card-img img {
+  .project-content .container .card .card-img img {
     height: 15rem !important;
+  }
+
+  .about-content .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-content .container .card {
+    margin: 0.5rem 0 !important;
+    width: 80% !important;
   }
 }
 @media (max-width: 319px) {
   .banner {
     display: none;
+  }
+
+  .about-content .container .card {
+    width: 100% !important;
   }
 }
 

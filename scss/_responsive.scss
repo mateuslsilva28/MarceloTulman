@@ -19,23 +19,27 @@
         padding: 0 0 0 2rem;
         width: calc(100% - 2rem)!important;
     }
+    
     .cards{
         @include mixin.Flex(row, center, justify);
         flex-wrap: wrap;   
         .card{width: 50%!important;}
+        .card:nth-of-type(2){border-radius: 0 0.8rem 0.8rem 0;}
+        .card:nth-of-type(3){border-radius: 0 0 0.8rem 0.8rem!important;}
     }
-    .card-projects{
+    
+    .container{
         .card{
             width: calc(50% - 1rem - 2px)!important;
-            height: 26rem!important;
             .card-img{
                 height: 12.5rem!important;
                 img{height: 12.5rem!important;}
             }
-            .content-card{
-                height: 13.5rem!important;
-            }
         }
+    }
+    .about-content .container .card{
+        margin: 0.5rem!important;
+        width: calc(50% - 1rem)!important;
     }
 }
 
@@ -92,20 +96,19 @@
     .banner{height: 400px;}
     .cards{
         width: 100%!important;
+        .card:nth-of-type(1){border-radius: 0!important;}
+        .card:nth-of-type(2){border-radius: 0!important;}
     }
     .project-content{
         width: 100%!important;
-        .card-projects{
+        .container{
             .card{
                 margin: 0.5rem 0.25rem!important;
                 width: calc(50% - 0.5rem - 2px)!important;
-                height: 27rem!important;
-                .content-card{
-                    height: 14.5rem!important;
-                }
             }
         }
     }
+    .about-content{width: 100%!important;}
 }
 
 @media (max-width: 577px){  
@@ -114,10 +117,11 @@
         width: 100%!important;
         @include mixin.Flex(column);
         .card{width: 100%!important;}
+        .card:nth-of-type(3){border-radius: 0!important;}
     }
     .project-content{
         width: 100%!important;
-        .card-projects{
+        .container{
             .card{
                 height: 30rem!important;
                 width: calc(100% - 1rem - 2px)!important;
@@ -128,8 +132,19 @@
             }
         }
     }
+    .about-content .container {
+        @include mixin.Flex(column, center, align);
+        .card{
+            margin: 0.5rem 0!important;
+            width: 80%!important;
+        }
+    }
 }
 
 @media (max-width:319px){
     .banner{display: none;}
+    .about-content .container .card{
+        width: 100%!important;
+    }
+    
 }
